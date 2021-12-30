@@ -32,6 +32,15 @@ function test_get_element_degree__ReturnCorrectValue( testCase )
     end
 end
 
+function test_get_element_continuities__ReturnCorrectValue( testCase )
+    splineSpace = create_case_uniform_N2P1C0;
+    goldElementContinuity = { [ -1, 0 ], [ 0, -1 ] };
+    for elementID = 1:length( goldElementContinuity )
+        testElementContinuity = splineSpace.get_element_continuities( elementID );
+        verifyEqual( testCase, testElementContinuity, goldElementContinuity{ elementID } );
+    end
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
