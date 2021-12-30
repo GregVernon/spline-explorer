@@ -27,5 +27,9 @@ classdef SplineSpace
         function elementDegree = get_element_degree( obj, elementID )
             elementDegree = obj.mDegree( elementID );
         end
+
+        function elementContinuities = get_element_continuities( obj, elementID )
+            elementContinuities = [ obj.mContinuity( elementID ), obj.mContinuity( elementID + 1 ) ];
+        end
     end
 end
