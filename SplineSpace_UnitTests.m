@@ -49,7 +49,7 @@ function test_get_element_length__ReturnCorrectValue( testCase )
     verifyEqual( testCase, testElementLength, goldElementLength );
 end
 
-function test_get_interface_continuity( testCase )
+function test_get_interface_continuity__ReturnCorrectValue( testCase )
     splineSpace = create_case_uspline_N3;
     goldInterfaceContinuity = [ -1, 1, 2, -1 ];
     for interfaceID = 1:length( goldInterfaceContinuity )
