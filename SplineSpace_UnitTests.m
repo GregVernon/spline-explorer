@@ -74,6 +74,13 @@ function test_get_element_ids_from_interface_id__ReturnCorrectValue( testCase )
     verifyEqual( testCase, testElementID, goldElementID );
 end
 
+function test_get_number_elements__ReturnCorrectValue( testCase )
+    splineSpace = create_case_uniform_N2P1C0;
+    goldNumberOfElements = 2;
+    testNumberOfElements = splineSpace.get_number_elements();
+    verifyEqual( testCase, testNumberOfElements, goldNumberOfElements );
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
