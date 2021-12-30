@@ -31,5 +31,9 @@ classdef SplineSpace
         function elementContinuities = get_element_continuities( obj, elementID )
             elementContinuities = [ obj.mContinuity( elementID ), obj.mContinuity( elementID + 1 ) ];
         end
+
+        function elementLength = get_element_length( obj, elementID )
+            elementLength = obj.mLength( elementID );
+        end
     end
 end
