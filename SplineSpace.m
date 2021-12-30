@@ -15,6 +15,10 @@ classdef SplineSpace
         function numberOfElements = get_number_elements( obj )
             numberOfElements = length( obj.mDegree );
         end
+        
+        function numberOfInterfaces = get_number_interfaces( obj )
+            numberOfInterfaces = length( obj.mContinuity );
+        end
 
         function degreeList = get_degree_list( obj )
             degreeList = obj.mDegree;
