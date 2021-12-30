@@ -51,4 +51,10 @@ classdef SplineSpace
             end
         end
     end
+    
+    methods ( Static )
+        function elementIDs = get_element_ids_from_interface_id( interfaceID )
+            elementIDs = [ interfaceID - 1, interfaceID ];
+        end
+    end
 end
