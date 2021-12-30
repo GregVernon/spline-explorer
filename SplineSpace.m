@@ -23,5 +23,9 @@ classdef SplineSpace
         function lengthList = get_length_list( obj )
             lengthList = obj.mLength;
         end
+        
+        function elementDegree = get_element_degree( obj, elementID )
+            elementDegree = obj.mDegree( elementID );
+        end
     end
 end
