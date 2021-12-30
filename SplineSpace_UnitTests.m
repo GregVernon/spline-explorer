@@ -23,7 +23,20 @@ function test_get_length_list__GivenSplineSpaceReturnCorrectValue( testCase )
     verifyEqual( testCase, testLengthList, goldLengthList );
 end
 
+function test_get_element_degree__GivenSplineSpaceReturnCorrectValue( testCase )
+    splineSpace = create_case_uspline_N3;
+    goldElementDegree = [ 1, 2, 3 ];
+    for elementID = 1:length( goldElementDegree )
+        testElementDegree = splineSpace.get_element_degree( elementID );
+        verifyEqual( testCase, testElementDegree, goldElementDegree( elementID ) );
+    end
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
+end
+
+function splineSpace = create_case_uspline_N3
+    splineSpace = SplineSpace( [ 1, 2, 3 ], [ -1, 1, 2, -1 ], [ 1, 1, 1 ] );
 end
