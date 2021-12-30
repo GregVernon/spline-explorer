@@ -58,6 +58,15 @@ function test_get_interface_continuity__ReturnCorrectValue( testCase )
     end
 end
 
+function test_get_interface_degrees__ReturnCorrectValue( testCase )
+    splineSpace = create_case_uspline_N3;
+    goldInterfaceDegrees = { [ missing, 1 ], [ 1, 2 ], [ 2, 3 ], [ 3, missing ] };
+    for interfaceID = 1:length( goldInterfaceDegrees )
+        testInterfaceDegrees = splineSpace.get_interface_degrees( interfaceID );
+        verifyEqual( testCase, testInterfaceDegrees, goldInterfaceDegrees{ interfaceID } );
+    end
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
