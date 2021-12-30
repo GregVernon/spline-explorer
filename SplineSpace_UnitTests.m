@@ -16,6 +16,13 @@ function test_get_continuity_list__GivenSplineSpaceReturnCorrectValue( testCase 
     verifyEqual( testCase, testContinuityList, goldContinuityList );
 end
 
+function test_get_length_list__GivenSplineSpaceReturnCorrectValue( testCase )
+    splineSpace = create_case_uniform_N2P1C0;
+    goldLengthList = [ 1, 1 ];
+    testLengthList = splineSpace.get_length_list();
+    verifyEqual( testCase, testLengthList, goldLengthList );
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
