@@ -81,6 +81,13 @@ function test_get_number_elements__ReturnCorrectValue( testCase )
     verifyEqual( testCase, testNumberOfElements, goldNumberOfElements );
 end
 
+function test_get_number_interfaces__ReturnCorrectValue( testCase )
+    splineSpace = create_case_uniform_N2P1C0;
+    goldNumberOfInterfaces = 3;
+    testNumberOfInterfaces = splineSpace.get_number_interfaces();
+    verifyEqual( testCase, testNumberOfInterfaces, goldNumberOfInterfaces );
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
