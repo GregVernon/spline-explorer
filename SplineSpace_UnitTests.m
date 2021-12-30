@@ -67,6 +67,13 @@ function test_get_interface_degrees__ReturnCorrectValue( testCase )
     end
 end
 
+function test_get_element_ids_from_interface_id__ReturnCorrectValue( testCase )
+    interfaceID = 1;
+    goldElementID = [ 0, 1 ];
+    testElementID = SplineSpace.get_element_ids_from_interface_id( interfaceID );
+    verifyEqual( testCase, testElementID, goldElementID );
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
