@@ -39,5 +39,16 @@ classdef SplineSpace
         function interfaceContinuity = get_interface_continuity( obj, interfaceID )
             interfaceContinuity = obj.mContinuity( interfaceID );
         end
+
+        function interfaceDegrees = get_interface_degrees( obj, interfaceID )
+            elementIDs = [ interfaceID - 1, interfaceID ];
+            if interfaceID == 1
+                interfaceDegrees = [ missing, obj.mDegree( elementIDs( end ) ) ];
+            elseif interfaceID == length( obj.mContinuity )
+                interfaceDegrees = [ obj.mDegree( elementIDs( 1 ) ), missing ];
+            else
+                interfaceDegrees = [ obj.mDegree( elementIDs( 1 ) ), obj.mDegree( elementIDs( end ) ) ];
+            end
+        end
     end
 end
