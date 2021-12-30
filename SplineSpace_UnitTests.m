@@ -41,6 +41,14 @@ function test_get_element_continuities__ReturnCorrectValue( testCase )
     end
 end
 
+function test_get_element_length__ReturnCorrectValue( testCase )
+    splineSpace = create_case_uniform_N2P1C0;
+    elementID = 1;
+    goldElementLength = 1;
+    testElementLength = splineSpace.get_element_length( elementID );
+    verifyEqual( testCase, testElementLength, goldElementLength );
+end
+
 %% UTILITY FUNCTIONS
 function splineSpace = create_case_uniform_N2P1C0
     splineSpace = SplineSpace( [ 1, 1 ], [ -1, 0, -1 ], [ 1, 1 ] );
