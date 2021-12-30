@@ -19,5 +19,9 @@ classdef SplineSpace
         function continuityList = get_continuity_list( obj )
             continuityList = obj.mContinuity;
         end
+
+        function lengthList = get_length_list( obj )
+            lengthList = obj.mLength;
+        end
     end
 end
