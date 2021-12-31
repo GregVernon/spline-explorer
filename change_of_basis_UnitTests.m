@@ -27,3 +27,12 @@ function test_scale_only_ReturnCorrectValue( testCase )
     testFunction = change_of_basis( referenceDomain, targetDomain );
     verifyEqual( testCase, testFunction, goldFunction );
 end
+
+function test_affine_ReturnCorrectValue( testCase )
+    referenceDomain = [ 0, 1 ];
+    targetDomain = [ -1, 1 ];
+    xi = sym( "xi", "real" );
+    goldFunction =  ( xi + 1 ) /  2;
+    testFunction = change_of_basis( referenceDomain, targetDomain );
+    verifyEqual( testCase, testFunction, goldFunction );
+end
