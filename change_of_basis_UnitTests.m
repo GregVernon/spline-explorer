@@ -18,3 +18,12 @@ function test_translation_only_ReturnCorrectValue( testCase )
     testFunction = change_of_basis( referenceDomain, targetDomain );
     verifyEqual( testCase, testFunction, goldFunction );
 end
+
+function test_scale_only_ReturnCorrectValue( testCase )
+    referenceDomain = [ 0, 1 ];
+    targetDomain = [ 0, 0.5 ];
+    xi = sym( "xi", "real" );
+    goldFunction =  2 * xi;
+    testFunction = change_of_basis( referenceDomain, targetDomain );
+    verifyEqual( testCase, testFunction, goldFunction );
+end
