@@ -1,3 +1,6 @@
 function basis = bernstein_basis( basisDegree, basisID, basisDomain )
-    basis = 4 - 2 * sym( "xi", "real" );
+    referenceDomain = [ 0, 1 ];
+    variate = change_of_basis( referenceDomain, basisDomain );
+    binomialCoefficient = nchoosek( basisDegree, basisID - 1 );
+    basis = binomialCoefficient * ( variate ^ ( basisID - 1 ) ) * ( ( 1 - variate ) ^ ( basisDegree - ( basisID - 1 ) ) );
 end
